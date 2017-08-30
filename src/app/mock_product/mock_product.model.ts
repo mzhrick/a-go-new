@@ -6,4 +6,5 @@ export class ProductModel{
   id:number;
   name:string;
   imgUrl:string;
+  detail:string;
 }

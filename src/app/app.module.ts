@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GetMockService } from './service/get-mock.service';
+import { CatalogBrowsingComponent } from './catalog-browsing/catalog-browsing.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CatalogBrowsingComponent
   ],
   imports: [
     BrowserModule,

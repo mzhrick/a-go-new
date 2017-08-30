@@ -12,4 +12,5 @@ describe('GetMockService', () => {
   it('should be created', inject([GetMockService], (service: GetMockService) => {
     expect(service).toBeTruthy();
   }));
+
 });
