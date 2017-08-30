@@ -7,4 +7,5 @@ export class ProductModel{
   name:string;
   imgUrl:string;
   detail:string;
+  price:number;
 }

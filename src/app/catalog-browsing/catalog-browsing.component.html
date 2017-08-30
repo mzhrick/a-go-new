@@ -1,3 +1,13 @@
-<p>
-  catalog-browsing works!
-</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 container" *ngFor="let product of products" style="border:1px solid black;text-align: center;cursor:pointer;" (click)="showDetails(product)">
+      <img src="{{product.imgUrl}}" alt="img" style="height:200px;width:180px;">
+      <label>{{product.name}}</label>
+    </div>
+  </div>
+</div>
+
+
+

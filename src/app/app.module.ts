@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GetMockService } from './service/get-mock.service';
 import { CatalogBrowsingComponent } from './catalog-browsing/catalog-browsing.component';
+import { ProductBrowsingComponent } from './product-browsing/product-browsing.component';
+import {  router } from './app.routes';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogBrowsingComponent
+    CatalogBrowsingComponent,
+    ProductBrowsingComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    router
   ],
   providers: [GetMockService],
   bootstrap: [AppComponent]
