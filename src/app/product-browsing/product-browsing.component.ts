@@ -13,8 +13,9 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ProductBrowsingComponent implements OnInit {
 
+  quantity : number= 1 ;
   selectedProduct :ProductModel;
-  products:ProductModel[];
+  // products:ProductModel[];
 
   constructor(
     private getMock:GetMockService,
@@ -27,12 +28,13 @@ export class ProductBrowsingComponent implements OnInit {
       .switchMap((params: ParamMap) =>
         this.getMock.getProduct(+params.get('id')))
       .subscribe((select:ProductModel) => {
-        this.selectedProduct = select;
-        console.log(this.selectedProduct);
+        return this.selectedProduct = select;
       });
   }
 
-  
+  addToChart() : void {
+
+  }
 
 
 

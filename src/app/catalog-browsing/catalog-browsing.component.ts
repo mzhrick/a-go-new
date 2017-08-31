@@ -27,7 +27,7 @@ export class CatalogBrowsingComponent implements OnInit {
   showDetails(product:ProductModel):void{
     //selected product id to pass to next page
     this.selectedProduct = product;
-    // console.log(this.selectedProduct);
+
     this.router.navigate(['/product',this.selectedProduct.id]);
   }
 }
