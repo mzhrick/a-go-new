@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-pull-md-2">
-      <img src="{{selectedProduct.imgUrl}}" alt="Image" style="border:1px solid lightgray;height:400px;width:370px;">
+      <img [src]='selectedProduct.imgUrl' alt="Image" style="border:1px solid lightgray;height:400px;width:370px;">
     </div>
 
     <div class="col-md-4" style="text-align: center">
@@ -16,7 +16,7 @@
         <form>
           <div class="form-group">
             <label for="quan">Quantity: </label>
-            <input type="text" id="quan"  name="quan" required typeof=number class="form-control" [(ngModel)]="quantity">
+            <input type='number' id="quan"  name="quan" required typeof=number class="form-control" [(ngModel)]="quantity">
           </div>
           <button type="submit" class="btn btn-success" (click)="addToChart()">Add to Chart</button>
         </form>
@@ -24,3 +24,5 @@
     </div>
   </div>
 </div>
+
+

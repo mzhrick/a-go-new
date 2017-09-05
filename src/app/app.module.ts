@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GetMockService } from './service/get-mock.service';
+import { AddToChartService } from './service/add-to-chart.service';
 import { CatalogBrowsingComponent } from './catalog-browsing/catalog-browsing.component';
 import { ProductBrowsingComponent } from './product-browsing/product-browsing.component';
 import {  router } from './app.routes';
+
+
 
 
 
@@ -13,14 +16,15 @@ import {  router } from './app.routes';
   declarations: [
     AppComponent,
     CatalogBrowsingComponent,
-    ProductBrowsingComponent
+    ProductBrowsingComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    router
+    router,
   ],
-  providers: [GetMockService],
+  providers: [GetMockService,AddToChartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
