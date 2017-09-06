@@ -5,6 +5,7 @@
 import { CatalogBrowsingComponent } from './catalog-browsing/catalog-browsing.component';
 import { ProductBrowsingComponent } from './product-browsing/product-browsing.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const appRoute : Routes = [
   {
@@ -19,6 +20,10 @@ const appRoute : Routes = [
     path:'',
     redirectTo:'/catalog',
     pathMatch:'full'
+  },
+  {
+    path:'cart',
+    component:ShoppingCartComponent
   }
 ];
 

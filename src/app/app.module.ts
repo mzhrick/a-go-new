@@ -6,7 +6,7 @@ import { GetMockService } from './service/get-mock.service';
 import { AddToChartService } from './service/add-to-chart.service';
 import { CatalogBrowsingComponent } from './catalog-browsing/catalog-browsing.component';
 import { ProductBrowsingComponent } from './product-browsing/product-browsing.component';
-import {  router } from './app.routes';
+import { router } from './app.routes';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { ProductModel } from './../mock_product/mock_product.model';
 import { GetMockService } from "../service/get-mock.service";
 import { AddToChartService } from '../service/add-to-chart.service';
 import { OrderProductModel } from './../mock_product/order_product.model';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap,Router } from '@angular/router';
+
 import 'rxjs/add/operator/switchMap';
 
 
@@ -14,7 +15,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ProductBrowsingComponent implements OnInit{
 
-
+  // @Output() order  = new EventEmitter<number>();
+  orderedNumber: number;
   quantity : number= 1 ;
   selectedProduct :ProductModel;
   orderProduct: OrderProductModel;
@@ -23,7 +25,8 @@ export class ProductBrowsingComponent implements OnInit{
   constructor(
     private getMock:GetMockService,
     private route: ActivatedRoute,
-    private add:AddToChartService
+    private add:AddToChartService,
+    private router:Router
   ) { }
 
 
@@ -36,20 +39,24 @@ export class ProductBrowsingComponent implements OnInit{
       });
   }
 
-  addToChart() : void {
+  addToChart(){
     this.orderProduct = {
       id: this.selectedProduct.id,
       name: this.selectedProduct.name,
+      imgUrl:this.selectedProduct.imgUrl,
       price: this.selectedProduct.price,
       quantity: this.quantity
     };
-    this.add.chart(this.orderProduct);
+    this.add.setCartProducts(this.orderProduct);
+
+    this.orderedNumber = this.add.getCartProducts().length;
+    // this.order.emit(this.orderedNumber);
 
     if(confirm('Continue shop?')==true){
       return;
     }else{
       //TODO jump to shopcart
-      console.log('hel');
+      this.router.navigate(['/cart']);
     }
 
   }

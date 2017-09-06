@@ -4,6 +4,7 @@
 export class OrderProductModel {
   id:number;
   name:string;
+  imgUrl:string;
   price:number;
   quantity:number;
 }

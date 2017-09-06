@@ -9,8 +9,17 @@ export class AddToChartService {
 
   constructor() { }
 
-  chart(product:OrderProductModel):void{
+  setCartProducts(product:OrderProductModel):void{
     this.orderedProduct.push(product);
-    console.log(this.orderedProduct);
   }
+
+  getCartProducts(){
+    return this.orderedProduct;
+  }
+
+  cancelCartProducts(product:OrderProductModel){
+    let index = this.orderedProduct.indexOf(product);
+    this.orderedProduct.splice(index,1);
+  }
+
 }
